@@ -1,5 +1,5 @@
 import numpy as np
-from typing import List
+from typing import List, Tuple
 from my_modules.draw_graph import draw_graph
 from my_modules.init_graph import init_grpah
 from my_modules.get_path import get_path
@@ -7,7 +7,7 @@ from my_modules.Edge import Edge
 
 INF = np.inf
 
-def solve_sparse(n: int, m: int, v: int, edges: List[Edge]):
+def solve_sparse(n: int, m: int, v: int, edges: List[Edge]) -> Tuple[List[int], List[int], List[int]]:
     d = np.full(n, INF)
     d[v] = 0
     table = [d.copy()]
@@ -29,7 +29,7 @@ def solve_sparse(n: int, m: int, v: int, edges: List[Edge]):
     table_np = np.array(table)
     return table_np, ops, prev
 
-def solve_dense(n: int, m: int, v: int, edges: List[Edge]):
+def solve_dense(n: int, m: int, v: int, edges: List[Edge]) -> Tuple[List[int], List[int], List[int]]:
     d = np.full(n, INF)
     d[v] = 0
     table = [d.copy()]
@@ -73,8 +73,7 @@ def main():
     print(prev_dens)
     for t in range(peaks):
         print(f"Кратчайший путь до вершины {t}: {get_path(prev_dens, t)}, расстояние = {final_distances[t]}")
-
-    # draw_graph(graph)
+    draw_graph(graph)
 
 if __name__ == '__main__':
     main()

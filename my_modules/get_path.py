@@ -1,5 +1,5 @@
 # Функция восстановления пути
-def get_path(prev, t):
+def get_path(prev: list, t: int) -> list:
     path = []
     while t is not None:
         path.append(t)
