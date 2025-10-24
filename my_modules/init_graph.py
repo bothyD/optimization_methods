@@ -9,8 +9,8 @@ def init_grpah() -> Tuple[int, int, int, List[Edge]]:
         Edge(0, 1, 25),
         Edge(1, 0, 25),
         
-        Edge(0, 2, 15),
-        Edge(2, 0, 15),
+        Edge(0, 2, 1),
+        Edge(2, 0, 1),
 
         Edge(0, 3, 7),
         Edge(3, 0, 7),
