@@ -1,7 +1,7 @@
 from typing import Tuple
 from my_modules.Edge import Edge
 
-def init_graph_from_file(filename: str = r'my_modules\txt\graph3.txt') -> Tuple[int, int, int, list]:
+def init_graph_from_file(filename: str = r'my_modules\txt\graph.txt') -> Tuple[int, int, int, list]:
     with open(filename, "r", encoding="utf-8") as f:
         peaks = int(f.readline().strip())
         edges = int(f.readline().strip())
